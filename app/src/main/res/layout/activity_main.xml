@@ -17,14 +17,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/grid_layout">
-
-        <androidx.gridlayout.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.gridlayout.widget.GridLayout>
-    </androidx.recyclerview.widget.RecyclerView>
+        tools:itemCount="20"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/grid_layout"
+        tools:spanCount="3" />
 
 
 </LinearLayout>
