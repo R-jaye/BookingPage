@@ -1,11 +1,10 @@
 package com.example.bookingpage;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.widget.Adapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView seat_List;
     List<String> titles;
     List<Integer> images;
-    Adapter adapter;
+    SeatAdapter adapter;
 
 
     @Override
@@ -53,15 +52,14 @@ public class MainActivity extends AppCompatActivity {
         images.add(R.drawable.seat);
         images.add(R.drawable.seat);
 
-       adapter = (Adapter) new SeatAdapter(this,titles,images);
+        adapter = new SeatAdapter(this, titles, images);
 
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3,
                 GridLayoutManager.VERTICAL, false);
         seat_List.setLayoutManager(gridLayoutManager);
-        seat_List.setAdapter((RecyclerView.Adapter) adapter);
+        seat_List.setAdapter(adapter);
     }
-
 
 
 }
